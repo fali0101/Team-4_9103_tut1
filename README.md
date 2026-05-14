@@ -1,97 +1,89 @@
 # Team-4_9103_tut1
 xche0262/fali0101/wjia0677
+
 IDEA9103 – Quiz 9
 
-## Cat Chase Field
+*Our team has chosen to create an original piece.*
 
-### Part 1: Project Direction
+# Option 1: Signal Trace Field
 
-Our team has chosen Option 2: Create an original piece.
-This project is an original interactive visual artwork designed to attract pets’ attention, especially cats.
+---
 
-1. Project Vision 
+## Part 1: Project Direction
 
-Our project is called Cat Chase Field. It is an abstract interactive animation inspired by cats’ hunting instincts and playful behaviour. Instead of using realistic animals or toys, we use glowing dots, moving lines, geometric bugs, ripple effects, and dark backgrounds to create a playful “moving prey field.” Small objects suddenly appear, escape, drift, or shake slightly to attract curiosity and attention.
+### Project Vision
 
-The project focuses on movement, unpredictability, and interaction rather than storytelling. Inspired by laser pointers, strings, insects, and glowing particles, the experience becomes a constantly changing playground for cats. Through simple shapes and responsive motion, we aim to create an engaging visual environment that feels alive, playful, and interactive.
-
-2. Inspiration Sources
+Signal Trace Field is a relaxing mini-game that turns cat entertainment behaviours, such as scratching a board, tapping with paws, chasing light dots, chasing small balls, and orbiting moving toys, into an abstract visual field. The piece is inspired by scratch-board textures, paw marks, toy balls, and cats’ natural attention to moving objects. These behaviours become visual logic: paw movement becomes falling scratch traces, moving toys become timed target circles, and playful uncertainty becomes wandering paths. The canvas is built from circles, panels, particles, lines, and gentle motion. Users move the mouse, drag, press keys, or release input to create temporary marks, while background panels and drifting paths continue to shift calmly.
 
 
-- Laser Pointer Movement
+### Inspiration Images
 
-Cats naturally chase fast-moving red laser dots because of their hunting instinct.
-We use this idea to design glowing moving targets and sudden direction changes.
+1. Cat scratch-board behaviour: paw movement, vertical scratching, repeated texture.  
+   ![Cat scratch-board behaviour](images/Scratch-board.jpg)
 
-- String and Ribbon Toys
+2. Chasing yarn balls: circular targets, stop-and-go movement. 
+   ![Cat scratch-board behaviour](images/Chasing1.jpg)
 
-Soft swinging movement attracts cats’ attention more effectively than static objects.
-This inspired the “String Snake” mechanic with delayed movement and flexible motion.
+3. Chasing light dots: moving targets, sudden direction changes, playful attention.  
+   ![Cat scratch-board behaviour](images/Chasing2.jpg)
 
-- Glow Bugs and Small Insects
+---
 
-Cats are highly sensitive to tiny unpredictable movements.
-We use floating glowing bugs and drifting motion to recreate this behaviour.
+## Part 2: Mechanics
+![Draft](images/Draft.jpg)
 
-3. Suggested Reference Images
+### Team Members and Ownership
 
-![An image of a Cat chasing laser pointer]()
-![An image of a Cat playing with ribbon/string toy]()
-![An image of a Dark background glowing particle animation]()
-![An image of a Abstract geometric motion graphics]()
+| Team Member | Mechanic |
+|---|---|
+| Fanfei Li | User input |
+| Sylvie Chen | Time-based + Audio |
+| Wenjia Jiang | Perlin noise and randomness |
+| All members | Audio |
+---
 
-### Part 2: Mechanics
+### Mechanic 1 - User Input: Scratch Pad Paw Traces
 
-Team Members and Mechanics:
+This mechanic is inspired by a cat using a scratch board. The lower part of the canvas works as a soft scratch-pad area, and an abstract paw shape follows the mouse with slight delay. When the user presses or drags on the pad, thin vertical scratch lines appear under the paw, like marks left on cardboard or sisal. When the mouse is released, loose particles fall from the scratched area like small fibres or dust. Keyboard input can trigger stronger scratch bursts, so each action leaves a slightly different trace. The particles are stored in arrays, with varied size, speed, opacity, and drift. This mechanic connects to the project vision by turning pawing and scratching into temporary visual feedback. It gives the user a simple and playful action without complex rules.
 
-- Member xche0262 :	Time-based 	
-- Member wjia0677 :	Perlin Noise & Randomness 
-- Member fali0101 :	User Input 
+Sketch: scratch pad area, paw shape, falling scratch lines, loose particles
 
-1. Mechanic 1: Time-based
+---
 
-This mechanic uses timers and events to control hidden “prey” appearing and disappearing from holes on the screen. Several dark circular holes are placed around the canvas, surrounded by soft glowing rings. Every 3–5 seconds, one randomly selected hole activates and a small glowing object briefly peeks out before hiding again. Over time, the appearance speed gradually increases, creating stronger tension and excitement.
+### Mechanic 2 - Time-based: Moving Toy Panels
 
-This mechanic supports our concept because cats are naturally attracted to sudden movement and short-lived targets. By combining scaling animations, glowing circles, and timed appearances, the artwork feels alive and constantly changing even without direct interaction. The timing system creates anticipation and surprise, making the screen behave like a playful hunting field rather than a static animation.
+This mechanic is inspired by cats chasing yarn balls or small moving toys. It uses timers, frameCount, and repeated events to control the background layer. The canvas is divided into framed panels, where circles, rectangles, line groups, and soft colour blocks slowly scale, fade, slide, or pulse. Every few seconds, a small target circle changes position, size, or direction, like a toy that briefly catches the cat’s attention. frameCount keeps these changes smooth rather than sudden. This mechanic provides a calm rhythm behind the paw traces and wandering lines. It also keeps the piece alive when no one is interacting, because the targets continue to move, pause, and reappear across the field.
 
-![Dark holes positioned around screen edges]()
-![Small glowing object appears briefly]()
-![Glowing ring around hole]()
-![Quick scale in/out animation]()
+Sketch: framed panels, pulsing circles, moving yarn balls, sliding rectangles
 
-2. Mechanic 2: Perlin Noise and Randomness
+---
 
-This mechanic controls floating glowing bugs using Perlin noise and random values. The bugs are created from simple geometric shapes such as ellipses, circles, transparent wings, and thin antenna lines. Perlin noise generates smooth and natural movement so the bugs drift softly across the screen instead of moving in sharp or robotic directions.
+### Mechanic 3 - Audio: Toy Sound Pulse
 
-Random values control the bugs’ starting positions, colours, sizes, speeds, and occasional sudden turns. This makes every run of the artwork slightly different and prevents the movement from becoming repetitive. The mechanic connects strongly to the idea of “escaping prey,” because cats are highly sensitive to tiny unpredictable movements. Together, Perlin noise and randomness create a playful and organic visual environment that continuously attracts attention.
+This mechanic uses the level or frequency content of an audio track to drive subtle visual changes. The sound can be based on a soft bell, toy sound, or gentle rhythmic audio that suggests cat play. Low frequencies can enlarge background circles slightly, mid frequencies can affect the thickness or speed of drifting lines, and higher frequencies can trigger small flickering particles near the target areas. As the sound changes, the canvas responds with calm pulses instead of dramatic effects. This connects to the project vision by giving the abstract field a hidden playful rhythm. The mechanic makes the space feel more alive, as if the visual system is quietly reacting to toys, motion, and attention.
 
-![Small glowing ellipse body]()
-![Transparent wings]()
-![Thin antenna lines]()
-![Floating dotted trail behind bug]()
+Sketch: audio pulse, responsive circles, flickering particles
 
-3. Mechanic 3: User Input
+---
 
-This mechanic allows users to interact with the artwork using mouse movement and clicks. A flexible “String Snake” follows the cursor using connected circles and thin lines. The head follows the mouse directly while the rest of the body follows with delay, creating a soft swinging movement similar to a cat teaser toy.
+### Mechanic 4 - Perlin Noise and Randomness: Wandering Chase Lines
 
-When users click, a “Paw Ripple” effect appears. Circular ripples expand outward while small glowing circles form a simplified paw-print shape before fading away. This interaction transforms the user into an active participant, similar to controlling a toy for a cat. The mechanic is intentionally simple and responsive because the project focuses on movement and reaction rather than complicated gameplay or storytelling.
+This mechanic uses Perlin noise and random values to create wandering paths, orbit-like trails, and moving dots. Random values decide where a path starts, how thick it is, how many segments it has, and how large nearby dots become. Perlin noise controls direction changes, so the movement feels smooth and organic rather than messy. Some lines can tangle inside one panel, some can loop around circles, and some can drift between panels. This connects to the project vision by translating the uncertain movement of playful chasing into abstract paths. The system suggests that small targets are being tracked, missed, and followed again. It keeps the field active while staying soft, loose, and visually controlled.
 
-![Mouse controls snake head]()
-![Connected circles follow with delay]()
-![Ripple effect on click]()
-![Simplified paw-print circles]()
+Skech: tangled paths, circular orbits, drifting dots, random-size balls
 
-4. Optional Supporting Effect
+---
 
-Laser Bloom is a short visual effect triggered by clicks or keyboard input. A glowing red dot appears with expanding transparent rings and a trailing particle tail. It mimics the sudden blooming effect of a laser pointer and enhances visual excitement without becoming a separate mechanic.
+## Part 3: Putting It Together
 
-### Part 3: Putting It Together
-
-All three mechanics share the same dark canvas and work together to create a playful hunting playground for cats. The time-based mechanic controls surprise appearances from hidden holes, Perlin noise and randomness generate natural bug movement, and user input allows players to control moving strings and ripple effects. Together, the glowing particles, trails, circles, and motion create a unified visual style inspired by cats’ curiosity toward movement and sudden reactions.
+The project uses one shared canvas with four connected layers. Time-based panels build the slow structure, audio adds gentle pulses, Perlin paths create wandering motion, and user input places paw traces on top. These systems influence each other lightly: target circles guide movement, drifting lines gather near active areas, and fresh scratch marks interrupt the field. Repeated circles, paw traces, particles, panels, and soft motion hold the whole piece together.
 
 
 
-# Emotion Garden
+
+
+
+# Option 2: Emotion Garden
 
 ![cover](images/cover.jpeg)
 
@@ -126,12 +118,12 @@ Link: https://www.lozano-hemmer.com/pulse_room.php
 
 ## Part 2: Mechanics
 
-### Team Members
-
-* Time-based — Xinyu Chen
-* Perlin noise — Wenjia Jiang
-* User input — Fanfei Li
-* Audio — All members
+| Team Member | Mechanic |
+|---|---|
+| Fanfei Li | User input |
+| Sylvie Chen | Time-based + Audio |
+| Wenjia Jiang | Perlin noise and randomness |
+| All members | Audio |
 
 ![flow](images/flow.jpeg)
 
@@ -169,3 +161,10 @@ The system combines all four mechanics into a single environment.
 User input defines mood and colour. Time-based processes control lifecycle. Perlin noise shapes motion, and audio input adjusts intensity.
 
 Together, they create a continuously evolving visual system that supports emotional reflection through organic movement and change.
+
+
+---
+# Reference
+1. https://www.pinterest.com/pin/475200198199229225/
+2. https://it.pinterest.com/pin/308637380689329863/
+3. https://it.pinterest.com/pin/183662491065977781/
