@@ -27,6 +27,7 @@ Signal Trace Field is a relaxing mini-game that turns cat entertainment behaviou
 3. Chasing light dots: moving targets, sudden direction changes, playful attention.  
    ![Cat scratch-board behaviour](images/Chasing2.jpg)
 
+
 ---
 
 ## Part 2: Mechanics
